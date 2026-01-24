@@ -1,0 +1,49 @@
+<UserControl x:Class="ProjectZein.Views.BuildsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="Transparent" Foreground="White">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Seleziona Versione" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+
+        <ListBox x:Name="BuildsList" Grid.Row="1" Background="#2D2D30" BorderBrush="#3F3F46" Foreground="White" Margin="0,0,0,20">
+            <ListBox.ItemContainerStyle>
+                 <Style TargetType="ListBoxItem">
+                     <Setter Property="Padding" Value="10"/>
+                     <Setter Property="FontSize" Value="14"/>
+                     <Setter Property="Foreground" Value="White"/>
+                 </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBoxItem Content="Fortnite Season 1 (7.40)"/>
+            <ListBoxItem Content="Fortnite Chapter 2 Season 1 (11.31)"/>
+            <ListBoxItem Content="Fortnite Chapter 2 Season 2 (12.41)"/>
+            <ListBoxItem Content="Fortnite Dev Build (Latest)"/>
+        </ListBox>
+
+        <StackPanel Grid.Row="2" Orientation="Vertical">
+             <Grid Margin="0,0,0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Percorso gioco:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBox x:Name="PathBox" Grid.Column="1" Height="30" Background="#2D2D30" Foreground="White" BorderBrush="#3F3F46" VerticalContentAlignment="Center" Padding="5,0"/>
+                <Button Content="..." Width="30" Height="30" Margin="5,0,0,0" Click="Browse_Click"/>
+             </Grid>
+
+             <Button Content="LAUNCH" Click="Launch_Click" Height="50" Background="#007ACC" Foreground="White" FontSize="16" FontWeight="Bold">
+                 <Button.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                 </Button.Resources>
+             </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>
